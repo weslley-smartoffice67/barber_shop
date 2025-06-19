@@ -5,7 +5,7 @@ from io import BytesIO
 
 # Usuários de exemplo
 USERS = {
-    "admin": "1234",
+    "Weslley": "Pas035824+",
     "evaristo": "barber"
 }
 
@@ -35,7 +35,7 @@ def registro_receita():
     left, right = st.columns(2)
 
     with left:
-        st.header("Registro de Entradas")
+        st.header("Atividades do Dia")
         with st.form("form_receita"):
             data = st.date_input("Data", value=datetime.now())
             servico = st.text_input("Serviço")
@@ -46,7 +46,7 @@ def registro_receita():
                 if "registros" not in st.session_state:
                     st.session_state['registros'] = []
                 st.session_state['registros'].append({
-                    "Data": data.strftime("%d,%m,%Y"),
+                    "Data": data.strftime("%d/%m/%Y"),
                     "Serviço": servico,
                     "Quantidade": quantidade,
                     "Valor": valor
